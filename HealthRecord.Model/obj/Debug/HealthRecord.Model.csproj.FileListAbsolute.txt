@@ -1,0 +1,11 @@
+D:\Project\VisualStudio開發專案\HealthRecord.API\HealthRecord.Model\bin\Debug\HealthRecord.Model.dll.config
+D:\Project\VisualStudio開發專案\HealthRecord.API\HealthRecord.Model\bin\Debug\HealthRecord.Model.dll
+D:\Project\VisualStudio開發專案\HealthRecord.API\HealthRecord.Model\bin\Debug\HealthRecord.Model.pdb
+D:\Project\VisualStudio開發專案\HealthRecord.API\HealthRecord.Model\bin\Debug\EntityFramework.dll
+D:\Project\VisualStudio開發專案\HealthRecord.API\HealthRecord.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\VisualStudio開發專案\HealthRecord.API\HealthRecord.Model\bin\Debug\EntityFramework.xml
+D:\Project\VisualStudio開發專案\HealthRecord.API\HealthRecord.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\VisualStudio開發專案\HealthRecord.API\HealthRecord.Model\bin\Debug\zh-Hant\EntityFramework.resources.dll
+D:\Project\VisualStudio開發專案\HealthRecord.API\HealthRecord.Model\obj\Debug\HealthRecord.Model.csprojResolveAssemblyReference.cache
+D:\Project\VisualStudio開發專案\HealthRecord.API\HealthRecord.Model\obj\Debug\HealthRecord.Model.dll
+D:\Project\VisualStudio開發專案\HealthRecord.API\HealthRecord.Model\obj\Debug\HealthRecord.Model.pdb

@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthRecord.API", "HealthRecord.API\HealthRecord.API.csproj", "{D2067DBF-87BF-4B8F-A2A8-5352092F7262}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthRecord.Model", "HealthRecord.Model\HealthRecord.Model.csproj", "{6CBA786D-FDC8-44EC-81FE-24828AB9FBD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthRecord.Service", "HealthRecord.Service\HealthRecord.Service.csproj", "{52804D6E-5307-4EC3-8C66-B6C30B3F1BA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthRecord.UI", "HealthRecord.UI\HealthRecord.UI.csproj", "{65C214A2-CDC8-4185-AE91-93CF99D6D6CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2067DBF-87BF-4B8F-A2A8-5352092F7262}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2067DBF-87BF-4B8F-A2A8-5352092F7262}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2067DBF-87BF-4B8F-A2A8-5352092F7262}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2067DBF-87BF-4B8F-A2A8-5352092F7262}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CBA786D-FDC8-44EC-81FE-24828AB9FBD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CBA786D-FDC8-44EC-81FE-24828AB9FBD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CBA786D-FDC8-44EC-81FE-24828AB9FBD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CBA786D-FDC8-44EC-81FE-24828AB9FBD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52804D6E-5307-4EC3-8C66-B6C30B3F1BA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52804D6E-5307-4EC3-8C66-B6C30B3F1BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52804D6E-5307-4EC3-8C66-B6C30B3F1BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52804D6E-5307-4EC3-8C66-B6C30B3F1BA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65C214A2-CDC8-4185-AE91-93CF99D6D6CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65C214A2-CDC8-4185-AE91-93CF99D6D6CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65C214A2-CDC8-4185-AE91-93CF99D6D6CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65C214A2-CDC8-4185-AE91-93CF99D6D6CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

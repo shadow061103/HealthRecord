@@ -1,0 +1,10 @@
+D:\Project\VisualStudio開發專案\HealthRecord.API\HealthRecord.Service\obj\Debug\HealthRecord.Service.csprojResolveAssemblyReference.cache
+D:\Project\VisualStudio開發專案\HealthRecord.API\HealthRecord.Service\bin\Debug\HealthRecord.Service.dll
+D:\Project\VisualStudio開發專案\HealthRecord.API\HealthRecord.Service\bin\Debug\HealthRecord.Service.pdb
+D:\Project\VisualStudio開發專案\HealthRecord.API\HealthRecord.Service\bin\Debug\HealthRecord.Model.dll
+D:\Project\VisualStudio開發專案\HealthRecord.API\HealthRecord.Service\bin\Debug\EntityFramework.dll
+D:\Project\VisualStudio開發專案\HealthRecord.API\HealthRecord.Service\bin\Debug\HealthRecord.Model.pdb
+D:\Project\VisualStudio開發專案\HealthRecord.API\HealthRecord.Service\bin\Debug\EntityFramework.xml
+D:\Project\VisualStudio開發專案\HealthRecord.API\HealthRecord.Service\bin\Debug\zh-Hant\EntityFramework.resources.dll
+D:\Project\VisualStudio開發專案\HealthRecord.API\HealthRecord.Service\obj\Debug\HealthRecord.Service.dll
+D:\Project\VisualStudio開發專案\HealthRecord.API\HealthRecord.Service\obj\Debug\HealthRecord.Service.pdb

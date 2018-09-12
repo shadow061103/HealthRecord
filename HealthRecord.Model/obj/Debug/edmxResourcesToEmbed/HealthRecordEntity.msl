@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HealthrecordModelStoreContainer" CdmEntityContainer="HealthrecordEntities">
+    <EntitySetMapping Name="Human">
+      <EntityTypeMapping TypeName="HealthrecordModel.Human">
+        <MappingFragment StoreEntitySet="Human">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Activity" ColumnName="Activity" />
+          <ScalarProperty Name="Goal" ColumnName="Goal" />
+          <ScalarProperty Name="isHighintensity" ColumnName="isHighintensity" />
+          <ScalarProperty Name="isLabor" ColumnName="isLabor" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nutrition">
+      <EntityTypeMapping TypeName="HealthrecordModel.Nutrition">
+        <MappingFragment StoreEntitySet="Nutrition">
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="HumanId" ColumnName="HumanId" />
+          <ScalarProperty Name="Carbon" ColumnName="Carbon" />
+          <ScalarProperty Name="Fat" ColumnName="Fat" />
+          <ScalarProperty Name="Protein" ColumnName="Protein" />
+          <ScalarProperty Name="BMR" ColumnName="BMR" />
+          <ScalarProperty Name="Tdee" ColumnName="Tdee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

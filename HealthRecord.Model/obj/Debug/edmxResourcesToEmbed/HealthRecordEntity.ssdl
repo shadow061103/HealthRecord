@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HealthrecordModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Human">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Weight" Type="float" Nullable="false" />
+    <Property Name="Height" Type="float" Nullable="false" />
+    <Property Name="Gender" Type="int" Nullable="false" />
+    <Property Name="Activity" Type="float" Nullable="false" />
+    <Property Name="Goal" Type="float" Nullable="false" />
+    <Property Name="isHighintensity" Type="bit" Nullable="false" />
+    <Property Name="isLabor" Type="bit" Nullable="false" />
+    <Property Name="Account" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Nutrition">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="HumanId" Type="int" Nullable="false" />
+    <Property Name="Carbon" Type="float" Nullable="false" />
+    <Property Name="Fat" Type="float" Nullable="false" />
+    <Property Name="Protein" Type="float" Nullable="false" />
+    <Property Name="BMR" Type="float" />
+    <Property Name="Tdee" Type="float" />
+    <Property Name="CreateDate" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="HealthrecordModelStoreContainer">
+    <EntitySet Name="Human" EntityType="Self.Human" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nutrition" EntityType="Self.Nutrition" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HealthrecordModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Human">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Weight" Type="Double" Nullable="false" />
+    <Property Name="Height" Type="Double" Nullable="false" />
+    <Property Name="Gender" Type="Int32" Nullable="false" />
+    <Property Name="Activity" Type="Double" Nullable="false" />
+    <Property Name="Goal" Type="Double" Nullable="false" />
+    <Property Name="isHighintensity" Type="Boolean" Nullable="false" />
+    <Property Name="isLabor" Type="Boolean" Nullable="false" />
+    <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Nutrition">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="HumanId" Type="Int32" Nullable="false" />
+    <Property Name="Carbon" Type="Double" Nullable="false" />
+    <Property Name="Fat" Type="Double" Nullable="false" />
+    <Property Name="Protein" Type="Double" Nullable="false" />
+    <Property Name="BMR" Type="Double" />
+    <Property Name="Tdee" Type="Double" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="HealthrecordEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Human" EntityType="Self.Human" />
+    <EntitySet Name="Nutrition" EntityType="Self.Nutrition" />
+  </EntityContainer>
+</Schema>
