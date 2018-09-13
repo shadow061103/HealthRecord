@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 using HealthRecord.Model;
 using HealthRecord.Service.Factory;
 
-namespace HealthRecord.Service.Service
+namespace HealthRecord.Service
 {
     public class NutritionService : INutritionService
     {
         private IRepository<Nutrition> _repository;
         public NutritionService()
         {
-            _repository= GenericFactory.CreateInastance<IRepository<Nutrition>>(typeof(GenericRepository<Human>));
+            _repository= GenericFactory.CreateInastance<IRepository<Nutrition>>(typeof(GenericRepository<Nutrition>));
         }
         public IResult Create(Nutrition instance)
         {
@@ -35,18 +35,18 @@ namespace HealthRecord.Service.Service
             return result;
         }
 
-        public IResult Delete(int categoryID)
+        public IResult Delete(int Id)
         {
             IResult result = new Result(false);
 
-            if (!this.IsExists(categoryID))
+            if (!this.IsExists(Id))
             {
                 result.Message = "找不到資料";
             }
 
             try
             {
-                var instance = this.GetByID(categoryID);
+                var instance = this.GetByID(Id);
                 this._repository.Delete(instance);
                 result.Success = true;
             }
@@ -57,9 +57,9 @@ namespace HealthRecord.Service.Service
             return result;
         }
 
-        public IEnumerable<Nutrition> GetAll()
+        public IEnumerable<Nutrition> GetAll(int humanId)
         {
-            return this._repository.GetAll();
+            return this._repository.GetAll().Where(c=>c.HumanId== humanId);
         }
 
         public Nutrition GetByID(int Id)

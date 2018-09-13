@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using HealthRecord.Model;
 namespace HealthRecord.Service
 {
-    interface INutritionService
+   public interface INutritionService
     {
         IResult Create(Nutrition instance);
 
@@ -18,6 +18,6 @@ namespace HealthRecord.Service
 
         Nutrition GetByID(int categoryID);
 
-        IEnumerable<Nutrition> GetAll();
+        IEnumerable<Nutrition> GetAll(int Id);
     }
 }

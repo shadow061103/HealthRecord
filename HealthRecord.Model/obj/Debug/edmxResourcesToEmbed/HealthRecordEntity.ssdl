@@ -27,6 +27,7 @@
     <Property Name="BMR" Type="float" />
     <Property Name="Tdee" Type="float" />
     <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Description" Type="nvarchar(max)" />
   </EntityType>
   <EntityContainer Name="HealthrecordModelStoreContainer">
     <EntitySet Name="Human" EntityType="Self.Human" Schema="dbo" store:Type="Tables" />

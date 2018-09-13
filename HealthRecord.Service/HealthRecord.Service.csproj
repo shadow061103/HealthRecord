@@ -50,6 +50,7 @@
     <Compile Include="Service\CalculateService.cs" />
     <Compile Include="Service\MemberService.cs" />
     <Compile Include="Service\NutritionService.cs" />
+    <Compile Include="Service\TdeeStrategy.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HealthRecord.Model\HealthRecord.Model.csproj">

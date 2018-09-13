@@ -22,5 +22,6 @@ namespace HealthRecord.Model
         public Nullable<double> BMR { get; set; }
         public Nullable<double> Tdee { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
+        public string Description { get; set; }
     }
 }

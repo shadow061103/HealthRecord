@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using HealthRecord.Model;
 namespace HealthRecord.Service
 {
-    interface IMemberService
+   public interface IMemberService
     {
         IResult Create(Human instance);
         IResult Update(Human instance);

@@ -20,6 +20,7 @@
     <EntitySetMapping Name="Nutrition">
       <EntityTypeMapping TypeName="HealthrecordModel.Nutrition">
         <MappingFragment StoreEntitySet="Nutrition">
+          <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="HumanId" ColumnName="HumanId" />

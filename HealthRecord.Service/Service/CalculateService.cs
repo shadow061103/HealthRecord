@@ -39,7 +39,17 @@ namespace HealthRecord.Service
             protein = _weightbylbl; //每磅體重1g蛋白
             fat = _weightbylbl * 0.4;//每磅體重0.4g脂肪
             carbon = (_tdee - (protein * 4) - (fat * 9)) / 4;
-            var temp = new Nutrition() { Carbon = carbon, Protein = protein, Fat = fat };
+            var temp = new Nutrition() {
+                Carbon = carbon,
+                Protein = protein,
+                Fat = fat,
+                Tdee = _tdee,
+                BMR = _bmr,
+                CreateDate = DateTime.Now,
+                Description=$"身高{human.Height},體重{human.Weight},年齡{human.Age}",
+                HumanId=human.Id
+
+            };
 
             return temp;
         }

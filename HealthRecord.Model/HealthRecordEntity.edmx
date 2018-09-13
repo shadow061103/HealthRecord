@@ -32,6 +32,7 @@
           <Property Name="BMR" Type="float" />
           <Property Name="Tdee" Type="float" />
           <Property Name="CreateDate" Type="datetime" />
+          <Property Name="Description" Type="nvarchar(max)" />
         </EntityType>
         <EntityContainer Name="HealthrecordModelStoreContainer">
           <EntitySet Name="Human" EntityType="Self.Human" Schema="dbo" store:Type="Tables" />
@@ -68,6 +69,7 @@
           <Property Name="BMR" Type="Double" />
           <Property Name="Tdee" Type="Double" />
           <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="HealthrecordEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Human" EntityType="Self.Human" />
@@ -98,6 +100,7 @@
           <EntitySetMapping Name="Nutrition">
             <EntityTypeMapping TypeName="HealthrecordModel.Nutrition">
               <MappingFragment StoreEntitySet="Nutrition">
+                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="HumanId" ColumnName="HumanId" />
