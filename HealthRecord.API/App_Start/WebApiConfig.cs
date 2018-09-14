@@ -10,13 +10,14 @@ namespace HealthRecord.API
         public static void Register(HttpConfiguration config)
         {
             // Web API 設定和服務
+            config.EnableCors();//非同源政策
 
             // Web API 路由
             config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute(
                 name: "DefaultApi2",
                 routeTemplate: "api/{controller}/{action}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                defaults: new { action = RouteParameter.Optional, id = RouteParameter.Optional }
             );
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

@@ -1,0 +1,150 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/vue.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script>
+        var instance = {
+            Account: '',
+            Age: '',
+            Weight: '',
+            Height: '',
+            Gender: 0,
+            Activity: 1.2,
+            Goal: 0.05,
+            isHighintensity: false,
+            isLabor: false
+            
+        };
+       
+
+        $(function () {
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    model: instance
+                       
+                },
+                methods: {
+                    Clear: function () {
+                        console.log('clear');
+                        var self = this;
+                        instance = {
+                            Account: '',Age: '', Weight: '', Height: '', Gender: 0, Activity: 1.2, Goal: 0.05, isHighintensity: false, isLabor: false
+                        };
+                        console.log(instance);
+                        self.model = instance
+                    },
+                    Register: function () {
+                        console.log('register');
+                        console.log(vm.model);
+                        var xhr = new XMLHttpRequest()
+                        var self = this
+                        xhr.open('POST', "http://localhost:64145/api/MemberApi/Register",true)
+                        xhr.onload = function () {
+                            
+                            console.log(xhr.responseText);
+                            //{"ID":"185c2081-076f-4c79-b089-eb3859d83cbc","Success":true,"Message":null,"Exception":null}
+                        }
+                        xhr.setRequestHeader('Content-type', 'application/json');
+                        xhr.send(JSON.stringify(vm.model))
+                        console.log('ajax finish')
+
+                        //$.ajax({
+                        //    url: "http://localhost:64145/api/MemberApi/Register",
+                        //    type: "Post",
+                        //    contentType: "application/json",
+                        //    data: JSON.stringify(vm.model),
+                        //    success: function (data) {
+                        //        if (data.Success)
+                        //        {
+                        //            alert('註冊成功');
+                        //        }
+                        //    },
+                        //    error: function (ex)
+                        //    {
+                        //        alert(ex);
+                        //    }
+
+                        //});
+                    }
+
+                }
+
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+
+
+    <div id="app" class="col-md-6" style="margin: 10px">
+
+        <h2>使用者資料</h2>
+        <label>帳號:</label>
+        <input type="text" v-model="model.Account" placeholder="請輸入帳號" />
+        <br/>
+        <label>年齡:</label>
+        <input  v-model="model.Age" placeholder="請輸入年齡" /><br />
+        <label>身高:</label>
+        <input  v-model="model.Height" placeholder="請輸入身高" /><br />
+        <label>體重:</label>
+        <input  v-model="model.Weight" placeholder="請輸入體重" /><br />
+        <label>性別:</label>
+        <select v-model="model.Gender">
+            <option value="0">男</option>
+            <option value="1">女</option>
+        </select>
+        <br />
+        <label>活動量:</label>
+        <select v-model="model.Activity">
+            <option value="1.2">完全沒有運動</option>
+            <option value="1.38">一週運動三次</option>
+            <option value="1.42">一週運動四次</option>
+            <option value="1.46">一週運動五次</option>
+            <option value="1.5">一週運動六次</option>
+            <option value="1.64">一週運動七次</option>
+        </select>
+        <br />
+        <label>目標:</label>
+        <select v-model="model.Goal">
+            <option value="0.05">最少增肌</option>
+            <option value="0.1">正常增肌</option>
+            <option value="0.15">瘋狂增肌</option>
+            <option value="0">維持體重</option>
+            <option value="-0.15">正常減脂</option>
+            <option value="-0.2">瘋狂減脂</option>
+            <option value="-0.25">可能消耗肌肉</option>
+        </select>
+        <br />
+        <input  type="checkbox" v-model="model.isLabor"/>
+        <label>是否為勞力工作</label>
+        <input  type="checkbox" v-model="model.isHighintensity"/>
+        <label>是否為勞力工作</label>
+
+
+        <br />
+        <button type="button" id="ButtonAddNewOrUpdate" v-on:click="Register">新增/更新</button>
+        <button type="button"  v-on:click="Clear">清空</button>
+
+    </div>
+
+
+
+
+
+
+</body>
+</html>

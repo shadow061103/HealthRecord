@@ -20,3 +20,4 @@ D:\Project\VisualStudio開發專案\HealthRecord\HealthRecord.Model\bin\Debug\zh
 D:\Project\VisualStudio開發專案\HealthRecord\HealthRecord.Model\obj\Debug\HealthRecord.Model.csprojResolveAssemblyReference.cache
 D:\Project\VisualStudio開發專案\HealthRecord\HealthRecord.Model\obj\Debug\HealthRecord.Model.dll
 D:\Project\VisualStudio開發專案\HealthRecord\HealthRecord.Model\obj\Debug\HealthRecord.Model.pdb
+D:\Project\VisualStudio開發專案\HealthRecord\HealthRecord.Model\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
