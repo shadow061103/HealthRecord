@@ -42,6 +42,7 @@ namespace HealthRecord.Service
             if (!this.IsExists(Id))
             {
                 result.Message = "找不到資料";
+                return result;
             }
 
             try

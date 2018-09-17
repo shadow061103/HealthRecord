@@ -24,7 +24,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="HumanId" Type="int" Nullable="false" />
           <Property Name="Carbon" Type="float" Nullable="false" />
           <Property Name="Fat" Type="float" Nullable="false" />

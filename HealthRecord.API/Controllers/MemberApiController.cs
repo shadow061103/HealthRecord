@@ -32,9 +32,19 @@ namespace HealthRecord.API.Controllers
             if (model == null)
                 return NotFound();
             else
-                return Ok(model);
+                return Ok();
 
         }
+        [HttpGet]
+        public IHttpActionResult GetUserData(string Account)
+        {
+            Human model = _memberservice.GetByID(Account);
+            if (model == null)
+                return NotFound();
+            else
+                return Ok(model);
+        }
+
         //[Route("Register")]
 
         [HttpPost]
@@ -74,33 +84,35 @@ namespace HealthRecord.API.Controllers
             if (model.Gender == 0)
             {
                 TdeeStrategy strategy = new ManTdeeStrategy();
+                strategy.Human = model;
                 nutrition = strategy.Nutrituon;
             }
             else
             {
                 TdeeStrategy strategy = new WomanTdeeStrategy();
+                strategy.Human = model;
                 nutrition = strategy.Nutrituon;
             }
             IResult result = new Result();
             result = _nutritionservice.Create(nutrition);
             if (result.Success)
-                return Ok();
+                return Ok(result);
             else
                 return BadRequest();
         }
        //[Route("DeleteItem")]
        [HttpPost]
-        public IHttpActionResult DeleteItem(int id)
+        public IHttpActionResult DeleteItem([FromBody]int id)
         {
             IResult result = new Result();
             result = _nutritionservice.Delete(id);
             if (result.Success)
-                return Ok();
+                return Ok(result);
             else
                 return BadRequest();
         }
         //[Route("GetUserAllRecord")]
-        [HttpPost]
+        [HttpGet]
         public IHttpActionResult GetUserAllRecord(int Id)
         {
             IEnumerable<Nutrition> all = _nutritionservice.GetAll(Id).OrderByDescending(c=>c.CreateDate);

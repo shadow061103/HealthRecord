@@ -54,6 +54,11 @@
                         xhr.onload = function () {
                             
                             console.log(xhr.responseText);
+                            var result = xhr.responseText;
+                            if (result.Success == true)
+                            {//帶帳號導頁
+                                window.location.href = 'index.html?account=' + vm.model.Account;
+                            }
                             //{"ID":"185c2081-076f-4c79-b089-eb3859d83cbc","Success":true,"Message":null,"Exception":null}
                         }
                         xhr.setRequestHeader('Content-type', 'application/json');

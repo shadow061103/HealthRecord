@@ -9,11 +9,12 @@ namespace HealthRecord.UI.Controllers
     public class DefaultController : Controller
     {
         
-        public ActionResult Login()
+        
+        public ActionResult Register()
         {
             return View();
         }
-        public ActionResult Register()
+        public ActionResult Index()
         {
             return View();
         }
