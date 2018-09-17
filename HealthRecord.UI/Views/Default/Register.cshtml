@@ -13,8 +13,11 @@
     <script src="~/Scripts/jquery-1.9.1.min.js"></script>
     <script src="~/Scripts/vue.min.js"></script>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/utility.js"></script>
     <script>
+        var vm;
         var instance = {
+            Id:'',
             Account: '',
             Age: '',
             Weight: '',
@@ -26,10 +29,31 @@
             isLabor: false
             
         };
-       
+        var account = getQueryString('account');
+        function LoadData(account) {
+            $.ajax({
+                url: "http://localhost:64145/api/MemberApi/GetUserData",
+                type: "Get",
+                contentType: "application/json",
+                dataType: 'json',
+                data: { Account: account },
+
+                success: function (data) {
+                    instance = data;
+                    vm.model = instance;
+                },
+                error: function (ex) {
+                    alert(ex.Message);
+                }
+
+
+            });
+
+        }
+
 
         $(function () {
-            var vm = new Vue({
+            vm = new Vue({
                 el: '#app',
                 data: {
                     model: instance
@@ -40,7 +64,7 @@
                         console.log('clear');
                         var self = this;
                         instance = {
-                            Account: '',Age: '', Weight: '', Height: '', Gender: 0, Activity: 1.2, Goal: 0.05, isHighintensity: false, isLabor: false
+                            Id: '',Account: '', Age: '', Weight: '', Height: '', Gender: 0, Activity: 1.2, Goal: 0.05, isHighintensity: false, isLabor: false
                         };
                         console.log(instance);
                         self.model = instance
@@ -54,10 +78,13 @@
                         xhr.onload = function () {
                             
                             console.log(xhr.responseText);
-                            var result = xhr.responseText;
+                            var result = JSON.parse(xhr.responseText);
+
+                            console.log(result.Success);
                             if (result.Success == true)
                             {//帶帳號導頁
-                                window.location.href = 'index.html?account=' + vm.model.Account;
+                                console.log('導頁');
+                                window.location.href = 'index?account=' + vm.model.Account;
                             }
                             //{"ID":"185c2081-076f-4c79-b089-eb3859d83cbc","Success":true,"Message":null,"Exception":null}
                         }
@@ -65,28 +92,18 @@
                         xhr.send(JSON.stringify(vm.model))
                         console.log('ajax finish')
 
-                        //$.ajax({
-                        //    url: "http://localhost:64145/api/MemberApi/Register",
-                        //    type: "Post",
-                        //    contentType: "application/json",
-                        //    data: JSON.stringify(vm.model),
-                        //    success: function (data) {
-                        //        if (data.Success)
-                        //        {
-                        //            alert('註冊成功');
-                        //        }
-                        //    },
-                        //    error: function (ex)
-                        //    {
-                        //        alert(ex);
-                        //    }
-
-                        //});
+                        
                     }
 
                 }
 
             });
+
+            if (account != null)
+            {
+                console.log('LoadData');
+                LoadData(account);//如果有account則先載入資料
+            }
 
         });
 

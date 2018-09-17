@@ -50,18 +50,30 @@ namespace HealthRecord.API.Controllers
         [HttpPost]
         public IHttpActionResult Register(Human model)
         {
-            
-            //檢查會員是否存在
-            bool isExist = _memberservice.IsExists(model.Account);
-            if (isExist)
-                return BadRequest();
-
             IResult result = new Result();
-            result = _memberservice.Create(model);
-            if(result.Success)
+            if (model.Id != 0)//更新資料
+            {
+                result = _memberservice.Update(model);
+
+            }
+            else
+            {
+                //檢查會員是否存在
+                bool isExist = _memberservice.IsExists(model.Account);
+                if (isExist)
+                    return BadRequest();
+                result = _memberservice.Create(model);
+               
+            }
+            if (result.Success)
                 return Ok(result);
             else
                 return BadRequest();
+
+
+
+
+
         }
 
       
